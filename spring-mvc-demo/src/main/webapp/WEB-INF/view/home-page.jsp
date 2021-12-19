@@ -12,14 +12,16 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/test.css">
     <script src="${pageContext.request.contextPath}/resources/js/test.js"></script>
 </head>
-<body>
 <div style="height: 25px; width: auto; align-content: center" > <h2>Welcome Shailendra!!! </h2></div>
 <div>
     <a href="showForm">Hello World - Form link</a>
+    <br>
+    <a href="sillyPage/showForm">Silly - Form link</a>
 </div>
-<img src="${pageContext.request.contextPath}/resources/img/download.png" width="177" height="284" />
+<%--<img src="${pageContext.request.contextPath}/resources/img/download.png" width="177" height="284" />--%>
+<input type="image" onclick="doSomeWork()" src="${pageContext.request.contextPath}/resources/img/download.png"/>
 
-<br>
-<input type="button" onclick="doSomeWork()" value="Click me"/>
+<%--<br>--%>
+<%--<input type="button" onclick="doSomeWork()" value="Click me"/>--%>
 </body>
 </html>

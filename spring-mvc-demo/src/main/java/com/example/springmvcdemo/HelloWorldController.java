@@ -3,11 +3,16 @@ package com.example.springmvcdemo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class HelloWorldController {
+
+    private static String SIGNATURE = "Shailendra";
+
+    public static HelloWorldController instance;
 
     @RequestMapping("/showForm")
     private String showForm() {
@@ -31,6 +36,22 @@ public class HelloWorldController {
         model.addAttribute("message", result);
 
         return "helloworld";
+    }
+
+    @RequestMapping("/processFormVersionThree")
+    private String convertToUpperCase(@RequestParam("username") String name, Model model) {
+
+        //read the request param from the html form using @RequestParam annotation
+        String UpperName = name.toUpperCase();
+
+        //add the data in to the model object
+        model.addAttribute("message", UpperName + " Hello there buddy!!!" + " Coding done by " + getSIGNATURE());
+
+        return "helloworld";
+    }
+
+    public static String getSIGNATURE() {
+        return SIGNATURE;
     }
 
 }
