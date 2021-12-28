@@ -1,30 +1,23 @@
 package com.example.springmvcdemo.model;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.LinkedHashMap;
 
-public class Student {
-
+public class Customer {
     private String firstName;
+    @NotNull(message = "last name can not be null")
+    @Size(min = 2, message = "last Name is required")
     private String lastName;
     private String email;
     private String pass;
     private String country;
-    private String favouriteLang;
+    @Min(value = 8, message = "should not be less than 8")
+    @Max(value = 11, message = "should be less than equal to 11")
+    private int contact;
     private LinkedHashMap<String, String> countryOptions;
-    private LinkedHashMap<String, String> languageOptions;
-
-
-    public Student() {
-        countryOptions = new LinkedHashMap<>();
-        countryOptions.put("IND", "INDIA");
-        countryOptions.put("NEP", "NEPAL");
-
-        languageOptions = new LinkedHashMap<>();
-        languageOptions.put("Java", "Java");
-        languageOptions.put("Python", "python");
-
-    }
 
     public String getFirstName() {
         return firstName;
@@ -74,30 +67,11 @@ public class Student {
         this.countryOptions = countryOptions;
     }
 
-    public String getFavouriteLang() {
-        return favouriteLang;
+    public int getContact() {
+        return contact;
     }
 
-    public void setFavouriteLang(String favouriteLang) {
-        this.favouriteLang = favouriteLang;
-    }
-
-    public LinkedHashMap<String, String> getLanguageOptions() {
-        return languageOptions;
-    }
-
-    public void setLanguageOptions(LinkedHashMap<String, String> languageOptions) {
-        this.languageOptions = languageOptions;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", country='" + country + '\'' +
-                ", coding lang='" + favouriteLang + '\'' +
-                '}';
+    public void setContact(int contact) {
+        this.contact = contact;
     }
 }

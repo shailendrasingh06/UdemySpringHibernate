@@ -19,6 +19,8 @@
     <a href="sillyPage/showForm">Silly - Form link</a>
     <br>
     <a href="student/showform"> If you are a student click here </a>
+    <br>
+    <a href="customer/showForm"> If you are a customer click here </a>
 </div>
 <%--<img src="${pageContext.request.contextPath}/resources/img/download.png" width="177" height="284" />--%>
 <input type="image" onclick="doSomeWork()" src="${pageContext.request.contextPath}/resources/img/download.png"/>
