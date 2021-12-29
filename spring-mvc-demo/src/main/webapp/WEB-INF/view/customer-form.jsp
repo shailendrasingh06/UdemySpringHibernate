@@ -25,8 +25,11 @@
     Last Name(*): <form:input path="lastName"></form:input>
     <form:errors path="lastName" cssClass="error"></form:errors>
     <br><br>
-    Contact: <form:input path="contact"></form:input>
-    <form:errors path="contact" cssClass="error"></form:errors>
+    Age: <form:input path="age"></form:input>
+    <form:errors path="age" cssClass="error"></form:errors>
+    <br><br>
+    Postal: <form:input path="postalCode"></form:input>
+    <form:errors path="postalCode" cssClass="error"></form:errors>
     <br><br>
     <input type="submit" value="Proceed"> </input>
 

@@ -13,6 +13,9 @@
 <body>
 <h2>Congratulations!!!</h2>
 <br>
-${customer.firstName} you are now registered with us.
+<pre>
+    ${customer.firstName} you are now registered with us.
+    Postal Code : ${customer.postalCode}
+</pre>
 </body>
 </html>
