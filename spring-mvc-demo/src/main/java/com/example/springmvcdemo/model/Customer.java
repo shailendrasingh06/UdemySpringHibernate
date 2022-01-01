@@ -1,5 +1,7 @@
 package com.example.springmvcdemo.model;
 
+import com.example.springmvcdemo.validations.CourseCode;
+
 import javax.validation.constraints.*;
 import java.util.LinkedHashMap;
 
@@ -17,6 +19,8 @@ public class Customer {
     private Integer age;
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 digits/characters")
     private String postalCode;
+    @CourseCode(groups = Customer.class)
+    private String courseCode;
     private LinkedHashMap<String, String> countryOptions;
 
     public String getFirstName() {
@@ -81,5 +85,13 @@ public class Customer {
 
     public String getPostalCode() {
         return postalCode;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
     }
 }
