@@ -14,8 +14,8 @@ public class Customer {
     private String pass;
     private String country;
     @NotNull(message = "is required")
-    @Min(value = 8, message = "should not be less than 8")
-    @Max(value = 11, message = "should be less than equal to 11")
+    @Min(value = 18, message = "should not be less than 8")
+    @Max(value = 65, message = "should be less than equal to 11")
     private Integer age;
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 digits/characters")
     private String postalCode;
