@@ -6,15 +6,17 @@ import java.lang.annotation.Annotation;
 
 public class CourseCodeConstraintValidator implements ConstraintValidator<CourseCode, String> {
 
+    private String coursePrefix;
     @Override
-    public void initialize(CourseCode constraintAnnotation) {
-        ConstraintValidator.super.initialize(constraintAnnotation);
+    public void initialize(CourseCode theCourseCode) {
+        ConstraintValidator.super.initialize(theCourseCode);
+        coursePrefix = theCourseCode.value();
     }
 
     @Override
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
         if (null != s && s.length() != 0) {
-            if (s.startsWith("LUV"))
+            if (s.startsWith(coursePrefix))
                 return true;
         }
         return false;
