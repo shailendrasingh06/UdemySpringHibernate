@@ -19,7 +19,7 @@ public class Customer {
     private Integer age;
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 digits/characters")
     private String postalCode;
-    @CourseCode(value = "TOPS", message = "course code must start with TOPS")
+    @CourseCode(groups = Customer.class)
     private String courseCode;
     private LinkedHashMap<String, String> countryOptions;
 
