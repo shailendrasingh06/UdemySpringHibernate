@@ -30,7 +30,7 @@ public class ReadStudentDemo {
             System.out.println("Saved student data successfully.");
 
             //Get New Session
-            Session session1 =factory.getCurrentSession();
+            Session session1 = factory.getCurrentSession();
 
             //Start Transaction
 
