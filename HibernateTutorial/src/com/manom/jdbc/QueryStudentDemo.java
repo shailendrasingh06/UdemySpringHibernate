@@ -20,6 +20,9 @@ public class QueryStudentDemo {
             session.beginTransaction();
             System.out.println("Fetching all students data....");
             List<Student> studentList = session.createQuery("from Student").getResultList();
+            //Update the last_name of the
+            session.createQuery("update Student set last_name='Yadav'").executeUpdate();
+
             //display all the fetched students data
             displayStudents(studentList);
             //Fetching value using where clause
