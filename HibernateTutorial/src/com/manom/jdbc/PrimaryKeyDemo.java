@@ -1,6 +1,7 @@
 package com.manom.jdbc;
 
 import com.manom.jdbc.entity.Student;
+import com.manom.jdbc.utils.DateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -21,9 +22,9 @@ public class PrimaryKeyDemo {
         try {
 
 
-            Student stdobj = new Student("Apple", "Singh", "Apple@gmail.com");
-            Student stdobj2 = new Student("Mango", "Singh", "Mango@gmail.com");
-            Student stdobj3 = new Student("Kiwi", "Singh", "Kiwi@gmail.com");
+            Student stdobj = new Student("Apple", "Singh", DateUtil.parseDate("16/12/1997"), "Apple@gmail.com");
+            Student stdobj2 = new Student("Mango", "Singh",DateUtil.parseDate("16/12/1997"), "Mango@gmail.com");
+            Student stdobj3 = new Student("Kiwi", "Singh",DateUtil.parseDate("16/12/1997"), "Kiwi@gmail.com");
 
             session.beginTransaction();
             System.out.println("Saving students data....");

@@ -1,6 +1,7 @@
 package com.manom.jdbc;
 
 import com.manom.jdbc.entity.Student;
+import com.manom.jdbc.utils.DateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -19,7 +20,7 @@ public class ReadStudentDemo {
 
 
             // create student object
-            Student stdobj = new Student("Piny", "Singh", "Piny@gmail.com");
+            Student stdobj = new Student("Piny", "Singh", DateUtil.parseDate("16/12/1997"),"Piny@gmail.com");
             //Begin Transaction
             session.beginTransaction();
             //save student object

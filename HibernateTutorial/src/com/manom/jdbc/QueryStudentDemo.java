@@ -1,6 +1,7 @@
 package com.manom.jdbc;
 
 import com.manom.jdbc.entity.Student;
+import com.manom.jdbc.utils.DateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -17,11 +18,14 @@ public class QueryStudentDemo {
 
         try {
 
+            Student studentObj = new Student("shailendra","Singh", DateUtil.parseDate("16/12/1997"),"shailendra@asia.bnp.paribas");
             session.beginTransaction();
+            //insert new student object
+            session.save(studentObj);
             System.out.println("Fetching all students data....");
             List<Student> studentList = session.createQuery("from Student").getResultList();
             //Update the last_name of the
-            session.createQuery("update Student set last_name='Yadav'").executeUpdate();
+            session.createQuery("update Student s set s.last_name='Yadav'").executeUpdate();
 
             //display all the fetched students data
             displayStudents(studentList);
@@ -35,9 +39,7 @@ public class QueryStudentDemo {
             System.out.println("Fetched student information successfully.");
         }catch (Exception e) {
             System.out.println(e.getMessage());
-
         }
-
     }
 
     private static void displayStudents(List<Student> studentList) {
