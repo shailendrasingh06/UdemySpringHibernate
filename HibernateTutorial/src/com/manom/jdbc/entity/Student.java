@@ -1,6 +1,5 @@
-package main.java.com.manom.jdbc.entity;
+package com.manom.jdbc.entity;
 
-import javax.annotation.processing.Generated;
 import javax.persistence.*;
 
 @Entity
