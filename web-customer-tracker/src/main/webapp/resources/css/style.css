@@ -8,14 +8,13 @@ table {
 	border-collapse:collapse;
 	border-bottom:1px solid gray;
 	font-family: Tahoma,Verdana,Segoe,sans-serif;
-	width:72%;
+	width:70%;
 }
  
 th {
 	border-bottom:1px solid gray;
 	background:none repeat scroll 0 0 #ffe699;
 	padding:10px;
-	color: #FFFFFF;
 }
 
 tr {
