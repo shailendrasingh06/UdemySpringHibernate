@@ -18,7 +18,6 @@ public class CustomerDAOImpl implements CustomerDAO{
     private SessionFactory sessionFactory;   //inject the session factory object
 
     @Override
-    @Transactional
     public List<Customer> getCustomers() {
 
         List<Customer> customerList = new ArrayList<>();
