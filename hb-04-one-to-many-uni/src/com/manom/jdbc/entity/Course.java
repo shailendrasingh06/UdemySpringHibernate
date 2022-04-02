@@ -87,8 +87,4 @@ public class Course {
                 '}';
     }
 
-
-    //annotate fields
-
-
 }

@@ -1,6 +1,7 @@
 package com.demo.dao;
 
 import com.demo.entity.Customer;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -42,6 +43,19 @@ public class CustomerDAOImpl implements CustomerDAO{
 
         Session session = sessionFactory.getCurrentSession();
 
-        session.save(customer);
+        // Inbuilt hibernate method to save or update based upon the primary key
+        session.saveOrUpdate(customer);
     }
+
+    @Override
+    public Customer getCustomer(long id) {
+
+        Session tempSession = sessionFactory.getCurrentSession();
+
+        Customer customer = tempSession.get(Customer.class, id);
+
+        return customer;
+    }
+
+
 }

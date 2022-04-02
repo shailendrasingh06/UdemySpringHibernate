@@ -37,15 +37,24 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Email</th>
+                <th>Action</th>
             </tr>
 
             <!-- loop over and print our customers -->
             <c:forEach var="tempCustomer" items="${customers}">
 
+                <!-- construct an "delete" link with custmer Id  -->
+                <c:url var="updateLink" value="/customer/showFormForUpdate">
+                    <c:param name="customerId" value="${tempCustomer.id}"/>
+                </c:url>
+
+                <!-- loop over and print our customers -->
+
                 <tr>
                     <td> ${tempCustomer.first_name} </td>
                     <td> ${tempCustomer.last_name} </td>
                     <td> ${tempCustomer.email} </td>
+                    <td><a href="${updateLink}">Update</a> </td>
                 </tr>
 
             </c:forEach>

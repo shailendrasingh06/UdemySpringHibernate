@@ -1,4 +1,3 @@
-<%@ taglib prefix="mvc" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
@@ -28,6 +27,8 @@
     <h3 style="color: darkcyan">Save Customer</h3>
 </div>
 <form:form action="saveCustomer" modelAttribute="customer" method="POST">
+    <!-- Need to associate this data with customer id -->
+    <form:hidden path="id"/>
     <table>
         <tbody>
         <tr>
