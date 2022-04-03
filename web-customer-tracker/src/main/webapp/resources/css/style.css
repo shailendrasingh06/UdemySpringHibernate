@@ -22,6 +22,8 @@ tr {
 	border-top:1px solid gray;
 	text-align:center;	
 }
+td{
+}
  
 tr:nth-child(even) {background: #FFFFFF}
 tr:nth-child(odd) {background: #BBBBBB}	
@@ -44,4 +46,22 @@ tr:nth-child(odd) {background: #BBBBBB}
 	
 	margin-bottom: 15px;
 	background: #cccccc;
+}
+
+#search-btn {
+	width: 80px;
+}
+
+.actionPanel {
+	display: flex;
+	margin: 0 auto;
+}
+
+#searchbox1 {
+	border: 1px solid #666;
+	margin-left: 395px;
+	height: 20px;
+	background-color: beige;
+	font-size: 12px;
+	font-weight: bold;
 }
