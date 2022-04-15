@@ -18,43 +18,63 @@
           href="${pageContext.request.contextPath}/resources/css/style.css"/>
 </head>
 <body>
-<div id="wrapper">
-    <div id="header">
-        <h2>CRM - Customer Relationship Manager</h2>
+<div id="parent-wrapper1">
+    <div id="wrapper">
+        <div id="header">
+            <h2>CRM - Customer Relationship Manager</h2>
+        </div>
+    </div>
+    <div id="container">
+        <h3>Save Customer</h3>
+    </div>
+    <form:form action="saveCustomer" modelAttribute="customer" method="POST">
+        <!-- Need to associate this data with customer id -->
+        <form:hidden path="id"/>
+        <table>
+            <tbody>
+            <tr>
+                <td><label>First Name : </label></td>
+                <td><form:input path="first_name" /></td>
+            </tr>
+            <tr>
+                <td><label>Last Name : </label></td>
+                <td><form:input path="last_name" /></td>
+            </tr>
+            <tr>
+                <td><label>Email : </label></td>
+                <td><form:input path="email" /></td>
+            </tr>
+            <tr>
+                <td><label>Profile Pic : </label></td>
+                <td><input type="file" id="profileImage" oninput="previewImage()"/></td>
+            </tr>
+            </tbody>
+        </table>
+        <input type="submit" value="Save" class="save"/>
+
+    </form:form>
+    <div id="backtolist">
+        <p>
+            <a href="${pageContext.request.contextPath}/customer/list">Back to list</a>
+        </p>
     </div>
 </div>
-<div id="container">
-    <h3 style="color: darkcyan">Save Customer</h3>
-</div>
-<form:form action="saveCustomer" modelAttribute="customer" method="POST">
-    <!-- Need to associate this data with customer id -->
-    <form:hidden path="id"/>
-    <table>
-        <tbody>
-        <tr>
-            <td><label>First Name : </label></td>
-            <td><form:input path="first_name" /></td>
-        </tr>
-        <tr>
-            <td><label>Last Name : </label></td>
-            <td><form:input path="last_name" /></td>
-        </tr>
-        <tr>
-            <td><label>Email : </label></td>
-            <td><form:input path="email" /></td>
-        </tr>
-        <tr>
-            <td><label></label></td>
-            <td><input type="submit" value="Save" class="save"/></td>
-        </tr>
-        </tbody>
-    </table>
 
-</form:form>
-<div style="clear: both">
-<p>
-    <a href="${pageContext.request.contextPath}/customer/list">Back to list</a>
-</p>
+<div id="parent-wrapper2">
+    <div id="container2">
+        <img src="${pageContext.request.contextPath}/resources/images/Goku.png" alt="Cutomer Profile Picture" id="imagePreviewer"/>
+    </div>
 </div>
+<script type="text/javascript">
+    function previewImage() {
+        var input = document.getElementById("profileImage");
+        var fReader = new FileReader();
+        fReader.readAsDataURL(input.files[0]);
+        fReader.onloadend = function(event){
+            var img = document.getElementById("imagePreviewer");
+            img.src = event.target.result;
+        }
+    }
+</script>
 </body>
 </html>
